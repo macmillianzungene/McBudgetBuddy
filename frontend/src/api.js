@@ -1,4 +1,3 @@
-// src/api.js
 import axios from 'axios';
 
 const API_URL = 'http://127.0.0.1:5000';  // Flask backend URL
@@ -21,5 +20,15 @@ export const addExpense = (expenseData) => {
 // Set goal
 export const setGoal = (goalData) => {
   return axios.post(`${API_URL}/set_goal`, goalData);
+};
+
+// Fetch expenses
+export const getExpenses = () => {
+  return axios.get(`${API_URL}/get_expenses`);
+};
+
+// Fetch goals
+export const getGoals = () => {
+  return axios.get(`${API_URL}/get_goals`);
 };
 
